@@ -272,9 +272,9 @@ def test_edge_canny(img):
     cv2.imwrite(IMG_DIR + "/edges_canny.jpg", edges)
 
 def test_cluster(img, n_clusters):
-    # For visualization with 2 clusters, we need to scale up the image so it
-    # is in {0, 255} instead of {0, 1}.
-    clusters = (cluster_segment(img, n_clusters) * 255).astype(np.uint8)
+    # For visualization, we need to scale up the image so it
+    # is in range(256) instead of range(n_clusters).
+    clusters = (cluster_segment(img, n_clusters) * (255 / (n_clusters-1))).astype(np.uint8)
 
     cv2.imwrite(IMG_DIR + "/cluster.jpg", clusters)
     clusters = cv2.imread(IMG_DIR + '/cluster.jpg')
