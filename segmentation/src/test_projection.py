@@ -53,7 +53,7 @@ def main():
     fig.add_subplot(121)
     plt.imshow(image, interpolation='nearest')
     fig.add_subplot(122)
-    plt.imshow(projected_image, interpolation='nearest')
+    plt.imshow(projected_image.astype(np.uint8), interpolation='nearest')
     plt.show()
 
 if __name__ == '__main__':
