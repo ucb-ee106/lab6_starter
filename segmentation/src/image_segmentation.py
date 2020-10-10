@@ -188,7 +188,8 @@ def do_kmeans(data, n_clusters):
          was assigned to. 
     """
     criteria = (cv2.TERM_CRITERIA_EPS + cv2.TERM_CRITERIA_MAX_ITER, 100, 0.2)
-    _, clusters, centers = kmeans = cv2.kmeans(data, n_clusters, bestLabels=None, criteria=criteria, attempts=1, flags=cv2.KMEANS_RANDOM_CENTERS)
+    _, clusters, centers = kmeans = cv2.kmeans(data.astype(np.float32), n_clusters, bestLabels=None, criteria=criteria, attempts=1, flags=cv2.KMEANS_RANDOM_CENTERS)
+
     return clusters
 
 def cluster_segment(img, n_clusters, random_state=0):
