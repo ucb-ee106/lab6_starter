@@ -230,7 +230,7 @@ def cluster_segment(img, n_clusters, random_state=0):
     # Upsample the image back to the original image (img) using nearest interpolation
     img_u = cv2.resize(src=cluster_img, dsize=(img.shape[1], img.shape[0]), interpolation=cv2.INTER_NEAREST)
 
-    return img_u.astype(np.uint8) # We scale up the pixels so that they are in {0, 255} instead of {0, 1}.
+    return img_u.astype(np.uint8)
 
 
 def to_grayscale(rgb_img):
@@ -242,8 +242,8 @@ def segment_image(img):
     # perform thresholding segmentation
     binary = threshold_segment_naive(to_grayscale(img), TODO, TODO).astype(np.uint8)
 
-    # perform clustering segmentation (make image binary)
-    # binary = cluster_segment(img, 2).astype(np.uint8) // 255
+    # perform clustering segmentation.
+    # binary = cluster_segment(img, 2).astype(np.uint8)
 
     # if np.mean(binary) > 0.5:
     #     binary = 1 - binary #invert the pixels if K-Means assigned 1's to background, and 0's to foreground
