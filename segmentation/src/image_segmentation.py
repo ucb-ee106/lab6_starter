@@ -218,14 +218,14 @@ def cluster_segment(img, n_clusters, random_state=0):
     # TODO: Generate a clustered image using K-means
 
     # first convert our 3-dimensional img_d array to a 2-dimensional array
-    # whose shape will be (length * width, number of channels) hint: use img_d.shape
+    # whose shape will be (height * width, number of channels) hint: use img_d.shape
     img_r = TODO
     
     # fit the k-means algorithm on this reshaped array img_r using the
     # the do_kmeans function defined above.
     clusters = TODO
 
-    # reshape this clustered image to the original downsampled image (img_d) shape
+    # reshape this clustered image to the original downsampled image (img_d) width and height 
     cluster_img = TODO
 
     # Upsample the image back to the original image (img) using nearest interpolation
