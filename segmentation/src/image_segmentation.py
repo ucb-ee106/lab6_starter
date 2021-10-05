@@ -150,6 +150,7 @@ def edge_detect_naive(gray_img):
     G_y = cv2.filter2D(None, -1, None)
 
     # Finally, compute G = sqrt(Gx ** 2 + Gy ** 2)
+    # Use np.sqrt() and np.pow() for overflow safety!
     G = None
 
     # Return G
