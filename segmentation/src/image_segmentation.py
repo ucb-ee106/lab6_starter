@@ -150,7 +150,7 @@ def edge_detect_naive(gray_img):
     G_y = cv2.filter2D(None, -1, None)
 
     # Finally, compute G = sqrt(Gx ** 2 + Gy ** 2)
-    # Use np.sqrt() and np.pow() for overflow safety!
+    # If you have errors computing the square root, you may be encountering overflow - change datatype to int64
     G = None
 
     # Return G
