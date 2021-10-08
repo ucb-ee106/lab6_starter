@@ -82,8 +82,8 @@ def show_image(img_name, title='Fig', grayscale=False):
 
 def threshold_segment_naive(gray_img, lower_thresh, upper_thresh):
     """perform grayscale thresholding using a lower and upper threshold by
-    blacking the background lying between the threholds and whitening the
-    foreground
+    blacking the background and whitening lying between the threholds (the
+    foreground)
 
     Parameter
     ---------
@@ -100,8 +100,8 @@ def threshold_segment_naive(gray_img, lower_thresh, upper_thresh):
         thresholded version of gray_img
     """
     # TODO: Implement threshold segmentation by setting pixels of gray_img inside the 
-    # lower_thresh and upper_thresh parameters to 0
-    # Then set any value that is outside the range to be 1 
+    # lower_thresh and upper_thresh parameters to 1
+    # Then set any value that is outside the range to be 0 
     # Hints: make a copy of gray_img so that we don't alter the original image
     # Boolean array indexing, or masking will come in handy. 
     # See https://docs.scipy.org/doc/numpy-1.13.0/user/basics.indexing.html
